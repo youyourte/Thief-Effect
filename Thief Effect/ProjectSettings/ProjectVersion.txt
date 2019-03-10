@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 m_EditorVersion: 2018.3.8f1
+=======
+<<<<<<< HEAD
+m_EditorVersion: 2018.3.5f1
+=======
+m_EditorVersion: 2018.3.6f1
+>>>>>>> a6344b92a612ae3034525e5ea4f032e808223088
+>>>>>>> parent of 23184c9... Revert "commit"
