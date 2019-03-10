@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FPCsupport : MonoBehaviour
+public class FPCsupport 
 {
-    public GameObject PlayerCam;
-
+    public GameObject playerCam;
     // effet de flou derriere
     private UnityStandardAssets.ImageEffects.Blur blur;
 
-    [Header("Button list")]
-    public string InventoryButton;
+    [Header("Buttons' List")]
+    public string inventoryButton;
     
 
-    public GameObject InventoryCanvas;
- 
-    private bool inventoryOn = false;
+    // variable qui permet d'accéder à l'inventaire
+    [Header("Inventory's Datas")]
+    public GameObject inventoryCanvas;
+    [HideInInspector] public bool inventoryOn = false;
 
 
 
@@ -24,19 +24,19 @@ public class FPCsupport : MonoBehaviour
     void Start()
     {
         // si il trouve pas la camera du joueur
-        if(PlayerCam == null)
+        if(playerCam == null)
         {
-             PlayerCam = GameObject.FindWithTag("Main Camera");
+             playerCam = GameObject.FindWithTag("MainCamera");
         }
-        blur = PlayerCam.GetComponent<UnityStandardAssets.ImageEffects.Blur>();
+        blur = playerCam.GetComponent<UnityStandardAssets.ImageEffects.Blur>();
         blur.enabled = false;
 
          // si il trouve pas la canvas de l'inventaire
-        if(InventoryCanvas == null)
+        if(inventoryCanvas == null)
         {
-            InventoryCanvas = GameObject.Find("Inventory Panel");
+            inventoryCanvas = GameObject.Find("Inventory Panel");
         }
-        InventoryCanvas.SetActive(false);
+        inventoryCanvas.SetActive(false);
         
 
     }
@@ -45,7 +45,7 @@ public class FPCsupport : MonoBehaviour
     void Update()
     {
         // si on presse 'i'
-        if(Input.GetButtonDown(InventoryButton))
+        if(Input.GetButtonDown(inventoryButton))
         {
             ShowOrHideInventory();
         }
@@ -53,7 +53,7 @@ public class FPCsupport : MonoBehaviour
 
     void ShowOrHideInventory()
     {
-        InventoryCanvas.SetActive(!inventoryOn);
+        inventoryCanvas.SetActive(!inventoryOn);
         blur.enabled = !inventoryOn;
 
         inventoryOn = !inventoryOn;
