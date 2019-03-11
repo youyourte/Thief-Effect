@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.ImageEffects;
 
-public class FPCsupport 
+public class FPCSupport : MonoBehaviour
 {
     public GameObject playerCam;
     // effet de flou derriere
