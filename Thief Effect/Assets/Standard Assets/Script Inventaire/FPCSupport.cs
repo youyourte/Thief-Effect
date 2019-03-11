@@ -26,7 +26,7 @@ public class FPCsupport : MonoBehaviour
         // si il trouve pas la camera du joueur
         if(PlayerCam == null)
         {
-             PlayerCam = GameObject.FindwithTag("Main Camera");
+             PlayerCam = GameObject.FindWithTag("Main Camera");
         }
         blur = PlayerCam.GetComponent<UnityStandardAssets.ImageEffects.Blur>();
         blur.enabled = false;
